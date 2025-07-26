@@ -1,0 +1,9 @@
+{
+  "name": "dio-mario-kart-challenge",
+  "version": "0.0.1",
+  "description": "node js projetc, challenge from DIO, mario kart ",
+  "main": "index.js",
+  "author": "JP",
+  "license": "ISC",
+  "private": true
+}
