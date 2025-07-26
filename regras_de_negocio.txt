@@ -1,0 +1,26 @@
+Regras de Negócio - Mario Kart JS
+
+================================
+
+Jogadores:
+- O sistema deve selecionar dois personagens para disputar a corrida.
+- Cada personagem é um objeto com os seguintes atributos: NOME, VELOCIDADE, MANOBRABILIDADE, PODER, PONTOS (iniciando em 0).
+
+Estrutura da Corrida:
+- A corrida é disputada em 5 rodadas.
+- A cada rodada, um tipo de pista é sorteado aleatoriamente: RETA, CURVA ou CONFRONTO.
+
+Mecânicas por Tipo de Pista:
+- RETA: 
+  - Cada jogador rola um dado de 6 lados e soma o resultado à sua VELOCIDADE.
+  - O jogador com o maior resultado total ganha 1 ponto.
+- CURVA:
+  - Cada jogador rola um dado de 6 lados e soma o resultado à sua MANOBRABILIDADE.
+  - O jogador com o maior resultado total ganha 1 ponto.
+- CONFRONTO:
+  - Cada jogador rola um dado de 6 lados e soma o resultado ao seu PODER.
+  - O jogador com o menor resultado total perde 1 ponto.
+  - A pontuação de um jogador nunca pode ser negativa (o mínimo é 0).
+
+Condição de Vitória:
+- Ao final das 5 rodadas, o jogador com a maior quantidade de pontos é declarado o vencedor.
