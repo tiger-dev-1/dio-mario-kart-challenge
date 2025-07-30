@@ -69,3 +69,10 @@ const rl = readline.createInterface({
   output: process.stdout, // Where to send output (the screen)
 });
 
+// Displays the character list cleanly, showing only ID and name.
+function displayCharacters(characterList) {
+  console.log("\nAvailable Characters:");
+  characterList.forEach((char) => {
+    console.log(`  [${char.id}] ${char.name}`);
+  });
+}
