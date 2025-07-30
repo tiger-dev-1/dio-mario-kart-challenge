@@ -72,7 +72,16 @@ const rl = readline.createInterface({
 // Displays the character list cleanly, showing only ID and name.
 function displayCharacters(characterList) {
   console.log("\nAvailable Characters:");
-  characterList.forEach((char) => {
+  characters.forEach((char) => {
     console.log(`  [${char.id}] ${char.name}`);
   });
 }
+
+// A helper function to ask a question and wait for the answer.
+// It wraps readline's callback in a Promise, which works well with async/await.
+function askWhichChar(query) {
+  return new Promise((resolve) => rl.question(query, resolve));
+}
+
+// Temporary call to test the function. We will move this later.
+displayCharacters(characters);
