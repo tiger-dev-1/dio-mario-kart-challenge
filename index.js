@@ -1,3 +1,6 @@
+// --- Setup for reading user input from the terminal ---
+import readline from "readline";
+
 const characters = [
   {
     id: 1,
@@ -59,3 +62,10 @@ const trackBlocks = [
 ];
 
 const dice = [1, 2, 3, 4, 5, 6];
+
+// Creates the communication "bridge" to the terminal
+const rl = readline.createInterface({
+  input: process.stdin, // Where to listen for input (the keyboard)
+  output: process.stdout, // Where to send output (the screen)
+});
+

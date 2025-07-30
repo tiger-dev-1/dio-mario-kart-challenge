@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "node js projetc, challenge from DIO, mario kart ",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
