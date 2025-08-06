@@ -84,4 +84,19 @@ function askWhichChar(query) {
 }
 
 // Temporary call to test the function. We will move this later.
-displayCharacters(characters);
+//displayCharacters();
+
+// The main game function will be called here in the future.
+
+// --- Game Logic Functions ---
+async function rollDice() {
+  // Returns a random integer from 1 to 6
+  const randomIndex = Math.floor(Math.random() * dice.length);
+  return dice[randomIndex];
+}
+
+async function getRandomTrackBlock() {
+    // Returns a random integer from 1 to 3
+  const randomIndex = Math.floor(Math.random() * trackBlocks.length);
+  return trackBlocks[randomIndex];
+}
