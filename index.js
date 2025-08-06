@@ -72,7 +72,7 @@ const rl = readline.createInterface({
 // Displays the character list cleanly, showing only ID and name.
 function displayCharacters(characterList) {
   console.log("\nAvailable Characters:");
-  characters.forEach((char) => {
+  characterList.forEach((char) => {
     console.log(`  [${char.id}] ${char.name}`);
   });
 }
@@ -96,7 +96,47 @@ async function rollDice() {
 }
 
 async function getRandomTrackBlock() {
-    // Returns a random integer from 1 to 3
+  // Returns a random track block object
   const randomIndex = Math.floor(Math.random() * trackBlocks.length);
   return trackBlocks[randomIndex];
 }
+
+async function chooseCharacter(prompt, availableCharacters) {
+  for (let i = 0; i < 3; i++) {
+    const id = await askWhichChar(prompt);
+    const selectedChar = availableCharacters.find((char) => char.id === parseInt(id));
+
+    if (!selectedChar) {
+      console.log("Invalid Character Number! Please, try again.");
+      continue;
+    }
+
+    return selectedChar;
+  }
+  return null;
+}
+
+(async function main() {
+  console.log("Welcome to Mario Kart JS!");
+
+  displayCharacters(characters);
+  const player1 = await chooseCharacter("\nPlayer 1, choose your character by their number: ", characters);
+  if (!player1) {
+    console.log("\nToo many invalid attempts for Player 1. \nEnding Game... \nRestart whenever you like It! =)");
+    rl.close();
+    return;
+  }
+  console.log(`Player 1 selected: ${player1.name}`);
+
+  const availableForP2 = characters.filter((char) => char.id !== player1.id);
+  displayCharacters(availableForP2);
+  const player2 = await chooseCharacter("Player 2, choose your character by their number: ", availableForP2);
+  if (!player2) {
+    console.log("\nToo many invalid attempts for Player 2. \nEnding Game... \nRestart whenever you like It! =)");
+    rl.close();
+    return;
+  }
+  console.log(`Player 2 selected: ${player2.name}`);
+
+  rl.close();
+})();
