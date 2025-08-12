@@ -1,103 +1,113 @@
-<h1>Desafio de projeto do Felipão: Mario Kart.JS</h1>
+<!-- English Version -->
+<h1>Mario Kart JS Challenge: A Revisited Edition</h1>
 
-  <table>
-        <tr>
-            <td>
-                <img src="./docs/header.gif" alt="Mario Kart" width="200">
-            </td>
-            <td>
-                <b>Objetivo:</b>
-                <p>Mario Kart é uma série de jogos de corrida desenvolvida e publicada pela Nintendo. Nosso desafio será criar uma lógica de um jogo de vídeo game para simular corridas de Mario Kart, levando em consideração as regras e mecânicas abaixo.</p>
-            </td>
-        </tr>
-    </table>
+<table>
+    <tr>
+        <td>
+            <img src="./docs/header.gif" alt="Mario Kart" width="200">
+        </td>
+        <td>
+            <b>Objective:</b>
+            <p>This project is a re-imagining of the "Mario Kart JS Challenge" originally proposed by DIO. The goal is to create the logic for a racing game simulator in Node.js, with revised rules and mechanics for an enhanced gameplay experience.</p>
+            <p><i>Note: The HTML layout for this README was created by the original project's author and adopted here for its excellent presentation. The text content has been rewritten to describe this revised version of the project.</i></p>
+        </td>
+    </tr>
+</table>
 
-<h2>Players</h2>
-      <table style="border-collapse: collapse; width: 800px; margin: 0 auto;">
-        <tr>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Mario</p>
-                <img src="./docs/mario.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 4</p>
-                <p>Manobrabilidade: 3</p>
-                <p>Poder: 3</p>
-            </td>
-             <td style="border: 1px solid black; text-align: center;">
-                <p>Peach</p>
-                <img src="./docs/peach.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 3</p>
-                <p>Manobrabilidade: 4</p>
-                <p>Poder: 2</p>
-            </td>
-              <td style="border: 1px solid black; text-align: center;">
-                <p>Yoshi</p>
-                <img src="./docs/yoshi.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 2</p>
-                <p>Manobrabilidade: 4</p>
-                <p>Poder: 3</p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Bowser</p>
-                <img src="./docs/bowser.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 5</p>
-                <p>Manobrabilidade: 2</p>
-                <p>Poder: 5</p>
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Luigi</p>
-                <img src="./docs/luigi.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 3</p>
-                <p>Manobrabilidade: 4</p>
-                <p>Poder: 4</p>
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Donkey Kong</p>
-                <img src="./docs/dk.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 2</p>
-                <p>Manobrabilidade: 2</p>
-                <p>Poder: 5</p>
-            </td>
-        </tr>
-    </table>
+## 🕹️ Gameplay & Rules
+The game is a turn-based race between two characters over 5 rounds. Each round features a random track type that tests a specific character attribute.
 
-<p></p>
+For a detailed breakdown of the current and original rules, please see the [Business Rules Document](./business_rules_reviewed.md).
 
-<h3>🕹️ Regras & mecânicas:</h3>
+---
 
-<b>Jogadores:</b>
+<!-- Versão em Português -->
+<h1>Desafio Mario Kart.JS: Uma Edição Revisitada</h1>
 
-<input type="checkbox" id="jogadores-item" />
-<label for="jogadores-item">O Computador deve receber dois personagens para disputar a corrida em um objeto cada</label>
+<table>
+    <tr>
+        <td>
+            <img src="./docs/header.gif" alt="Mario Kart" width="200">
+        </td>
+        <td>
+            <b>Objetivo:</b>
+            <p>Este projeto é uma releitura do "Desafio Mario Kart JS" originalmente proposto pela DIO. O objetivo é criar a lógica de um simulador de jogo de corrida em Node.js, com regras e mecânicas revisadas para uma experiência de jogo aprimorada.</p>
+            <p><i>Nota: O layout HTML deste README foi criado pelo autor do projeto original e adotado aqui por sua excelente apresentação. O conteúdo textual foi reescrito para descrever esta versão revisada do projeto.</i></p>
+        </td>
+    </tr>
+</table>
 
-<b>Pistas:</b>
+## 🕹️ Gameplay & Regras
+O jogo é uma corrida baseada em turnos entre dois personagens ao longo de 5 rodadas. Cada rodada apresenta um tipo de pista aleatório que testa um atributo específico do personagem.
 
-<ul>
-  <li><input type="checkbox" id="pistas-1-item" /> <label for="pistas-1-item">Os personagens irão correr em uma pista aleatória de 5 rodadas</label></li>
-  <li><input type="checkbox" id="pistas-2-item" /> <label for="pistas-2-item">A cada rodada, será sorteado um bloco da pista que pode ser uma reta, curva ou confronto</label>
-    <ul>
-      <li><input type="checkbox" id="pistas-2-1-item" /> <label for="pistas-2-1-item">Caso o bloco da pista seja uma RETA, o jogador deve jogar um dado de 6 lados e somar o atributo VELOCIDADE, quem vencer ganha um ponto</label></li>
-      <li><input type="checkbox" id="pistas-2-2-item" /> <label for="pistas-2-2-item">Caso o bloco da pista seja uma CURVA, o jogador deve jogar um dado de 6 lados e somar o atributo MANOBRABILIDADE, quem vencer ganha um ponto</label></li>
-      <li><input type="checkbox" id="pistas-2-3-item" /> <label for="pistas-2-3-item">Caso o bloco da pista seja um CONFRONTO, o jogador deve jogar um dado de 6 lados e somar o atributo PODER, quem perder, perde um ponto</label></li>
-      <li><input type="checkbox" id="pistas-2-3-item" /> <label for="pistas-2-3-item">Nenhum jogador pode ter pontuação negativa (valores abaixo de 0)</label></li>
-    </ul>
-  </li>
-</ul>
+Para uma análise detalhada das regras atuais e originais, por favor, consulte o [Documento de Regras de Negócio](./business_rules_reviewed.md).
 
-<b>Condição de vitória:</b>
+## 👥 Personagens / Characters
 
-<input type="checkbox" id="vitoria-item" />
-<label for="vitoria-item">Ao final, vence quem acumulou mais pontos</label>
+<table style="border-collapse: collapse; width: 800px; margin: 0 auto;">
+    <tr>
+        <td style="border: 1px solid black; text-align: center;">
+            <p>Mario</p>
+            <img src="./docs/mario.gif" alt="Mario Kart" width="60" height="60">
+        </td>
+        <td style="border: 1px solid black; text-align: center;">
+            <p>Velocidade: 4</p>
+            <p>Manobrabilidade: 3</p>
+            <p>Poder: 3</p>
+        </td>
+         <td style="border: 1px solid black; text-align: center;">
+            <p>Peach</p>
+            <img src="./docs/peach.gif" alt="Mario Kart" width="60" height="60">
+        </td>
+        <td style="border: 1px solid black; text-align: center;">
+            <p>Velocidade: 3</p>
+            <p>Manobrabilidade: 4</p>
+            <p>Poder: 2</p>
+        </td>
+          <td style="border: 1px solid black; text-align: center;">
+            <p>Yoshi</p>
+            <img src="./docs/yoshi.gif" alt="Mario Kart" width="60" height="60">
+        </td>
+        <td style="border: 1px solid black; text-align: center;">
+            <p>Velocidade: 2</p>
+            <p>Manobrabilidade: 4</p>
+            <p>Poder: 3</p>
+        </td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid black; text-align: center;">
+            <p>Bowser</p>
+            <img src="./docs/bowser.gif" alt="Mario Kart" width="60" height="60">
+        </td>
+        <td style="border: 1px solid black; text-align: center;">
+            <p>Velocidade: 5</p>
+            <p>Manobrabilidade: 2</p>
+            <p>Poder: 5</p>
+        </td>
+        <td style="border: 1px solid black; text-align: center;">
+            <p>Luigi</p>
+            <img src="./docs/luigi.gif" alt="Mario Kart" width="60" height="60">
+        </td>
+        <td style="border: 1px solid black; text-align: center;">
+            <p>Velocidade: 3</p>
+            <p>Manobrabilidade: 4</p>
+            <p>Poder: 4</p>
+        </td>
+        <td style="border: 1px solid black; text-align: center;">
+            <p>Donkey Kong</p>
+            <img src="./docs/dk.gif" alt="Mario Kart" width="60" height="60">
+        </td>
+        <td style="border: 1px solid black; text-align: center;">
+            <p>Velocidade: 2</p>
+            <p>Manobrabilidade: 2</p>
+            <p>Poder: 5</p>
+        </td>
+    </tr>
+</table>
+
+---
+
+## Acknowledgments / Agradecimentos
+This project was inspired by the [original "Mario Kart JS Challenge"](https://github.com/digitalinnovationone/formacao-nodejs/tree/main/03-projeto-mario-kart) from a DIO (Digital Innovation One) bootcamp, created by instructor Felipe Aguiar (Felipão).
+
+Este projeto foi inspirado pelo [desafio original "Mario Kart JS"](https://github.com/digitalinnovationone/formacao-nodejs/tree/main/03-projeto-mario-kart) de um bootcamp da DIO (Digital Innovation One), criado pelo instrutor Felipe Aguiar (Felipão).
