@@ -116,6 +116,15 @@ async function chooseCharacter(prompt, availableCharacters) {
   return null;
 }
 
+async function playRaceEngine(player1, player2) {
+  console.log("\n🏁 Race starting! 🏁\n");
+
+  for (let round = 1; round <= 5; round++) {
+    console.log(`\nዙ Round ${round} ዙ`);
+    // The round's logic (track draw, dice, etc.) will go here.
+  }
+}
+
 (async function main() {
   console.log("Welcome to Mario Kart JS!");
 
@@ -137,6 +146,8 @@ async function chooseCharacter(prompt, availableCharacters) {
     return;
   }
   console.log(`Player 2 selected: ${player2.name}`);
+
+  await playRaceEngine(player1, player2);
 
   rl.close();
 })();
