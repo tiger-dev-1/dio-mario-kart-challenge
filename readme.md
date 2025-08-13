@@ -8,7 +8,7 @@
         </td>
         <td>
             <b>Objective:</b>
-            <p>This project is a re-imagining of the "Mario Kart JS Challenge" originally proposed by DIO. The goal is to create the logic for a racing game simulator in Node.js, with revised rules and mechanics for an enhanced gameplay experience.</p>
+            <p>This project is a re-imagining of the "Mario Kart JS Challenge" originally proposed by DIO. While the instructor suggested forking the original project to implement improvements, this version was built from scratch to fully explore and redefine the game's logic and architecture. The goal is to create a racing game simulator in Node.js with revised rules and mechanics for an enhanced gameplay experience.</p>
             <p><i>Note: The HTML layout for this README was created by the original project's author. I thought the design was so neat hahaha that I decided to use it here. The text content, however, has been rewritten to describe this revised version of the project.</i></p>
         </td>
     </tr>
@@ -31,7 +31,7 @@ For a detailed breakdown of the current and original rules, please see the [Busi
         </td>
         <td>
             <b>Objetivo:</b>
-            <p>Este projeto é uma releitura do "Desafio Mario Kart JS" originalmente proposto pela DIO. O objetivo é criar a lógica de um simulador de jogo de corrida em Node.js, com regras e mecânicas revisadas para uma experiência de jogo aprimorada.</p>
+            <p>Este projeto é uma releitura do "Desafio Mario Kart JS" originalmente proposto pela DIO. Embora o instrutor tenha sugerido fazer um fork do projeto original para implementar melhorias, esta versão foi construída do zero para explorar e redefinir completamente a lógica e a arquitetura do jogo. O objetivo é criar um simulador de jogo de corrida em Node.js com regras e mecânicas revisadas para uma experiência de jogo aprimorada.</p>
             <p><i>Nota: O layout HTML deste README foi criado pelo autor do projeto original. Eu achei o design tão bonitinho rsrsrs que decidi usá-lo aqui. O conteúdo textual, no entanto, foi reescrito para descrever esta versão revisada do projeto.</i></p>
         </td>
     </tr>
