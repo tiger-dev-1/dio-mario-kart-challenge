@@ -119,9 +119,81 @@ async function chooseCharacter(prompt, availableCharacters) {
 async function playRaceEngine(player1, player2) {
   console.log("\n🏁 Race starting! 🏁\n");
 
+  let player1Score = 0;
+  let player2Score = 0;
+
   for (let round = 1; round <= 5; round++) {
     console.log(`\nዙ Round ${round} ዙ`);
-    // The round's logic (track draw, dice, etc.) will go here.
+
+    // Draw a track block
+    const trackBlock = await getRandomTrackBlock();
+    console.log(`Track type: ${trackBlock.name}`);
+
+    // Roll the dice
+    const diceResult1 = await rollDice();
+    const diceResult2 = await rollDice();
+
+    // Check the total skill
+    let player1Skill = 0;
+    let player2Skill = 0;
+    let skillType = "";
+
+    switch (trackBlock.name) {
+      case "STRAIGHT":
+        player1Skill = player1.speed;
+        player2Skill = player2.speed;
+        skillType = "speed";
+        break;
+      case "CURVE":
+        player1Skill = player1.handling;
+        player2Skill = player2.handling;
+        skillType = "handling";
+        break;
+      case "CLASH":
+        player1Skill = player1.power;
+        player2Skill = player2.power;
+        skillType = "power";
+        break;
+    }
+
+    let totalTestSkill1 = player1Skill + diceResult1;
+    let totalTestSkill2 = player2Skill + diceResult2;
+
+    console.log(`  🎲 ${player1.name} rolled a dice of ${diceResult1} + ${skillType} ${player1Skill} = ${totalTestSkill1}`);
+    console.log(`  🎲 ${player2.name} rolled a dice of ${diceResult2} + ${skillType} ${player2Skill} = ${totalTestSkill2}`);
+
+    if (totalTestSkill1 > totalTestSkill2) {
+      console.log(`  ${player1.name} won the round! 🎉`);
+      if (trackBlock.name === "CLASH") {
+        console.log(`  ${player2.name} lost a point! 🐢`);
+        player2Score--;
+      } else {
+        player1Score++;
+      }
+    } else if (totalTestSkill2 > totalTestSkill1) {
+      console.log(`  ${player2.name} won the round! 🎉`);
+      if (trackBlock.name === "CLASH") {
+        console.log(`  ${player1.name} lost a point! 🐢`);
+        player1Score--;
+      } else {
+        player2Score++;
+      }
+    } else {
+      console.log("  It's a draw for this round!");
+    }
+    console.log("---------------------------------");
+  }
+
+  console.log("\n🏆 Final Result 🏆");
+  console.log(`${player1.name} (Player 1): ${player1Score} point(s)`);
+  console.log(`${player2.name} (Player 2): ${player2Score} point(s)`);
+
+  if (player1Score > player2Score) {
+    console.log(`\nCongratulations, ${player1.name} (Player 1)! You are the grand winner! 🥇`);
+  } else if (player2Score > player1Score) {
+    console.log(`\nCongratulations, ${player2.name} (Player 2)! You are the grand winner! 🥇`);
+  } else {
+    console.log("\nThe race ended in a tie! What a dispute!");
   }
 }
 
