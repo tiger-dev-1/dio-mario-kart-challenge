@@ -22,7 +22,7 @@ For a detailed breakdown of the current and original rules, please see the [Busi
 ---
 
 <!-- Versão em Português -->
-<h1>Desafio Mario Kart.JS: Uma Edição Revisitada</h1>
+<h1>Desafio Mario Kart.JS: Uma Edição Revisada</h1>
 
 <table>
     <tr>
