@@ -9,7 +9,7 @@
         <td>
             <b>Objective:</b>
             <p>This project is a re-imagining of the "Mario Kart JS Challenge" originally proposed by DIO. The goal is to create the logic for a racing game simulator in Node.js, with revised rules and mechanics for an enhanced gameplay experience.</p>
-            <p><i>Note: The HTML layout for this README was created by the original project's author and adopted here for its excellent presentation. The text content has been rewritten to describe this revised version of the project.</i></p>
+            <p><i>Note: The HTML layout for this README was created by the original project's author. I thought the design was so neat hahaha that I decided to use it here. The text content, however, has been rewritten to describe this revised version of the project.</i></p>
         </td>
     </tr>
 </table>
@@ -32,7 +32,7 @@ For a detailed breakdown of the current and original rules, please see the [Busi
         <td>
             <b>Objetivo:</b>
             <p>Este projeto é uma releitura do "Desafio Mario Kart JS" originalmente proposto pela DIO. O objetivo é criar a lógica de um simulador de jogo de corrida em Node.js, com regras e mecânicas revisadas para uma experiência de jogo aprimorada.</p>
-            <p><i>Nota: O layout HTML deste README foi criado pelo autor do projeto original e adotado aqui por sua excelente apresentação. O conteúdo textual foi reescrito para descrever esta versão revisada do projeto.</i></p>
+            <p><i>Nota: O layout HTML deste README foi criado pelo autor do projeto original. Eu achei o design tão bonitinho rsrsrs que decidi usá-lo aqui. O conteúdo textual, no entanto, foi reescrito para descrever esta versão revisada do projeto.</i></p>
         </td>
     </tr>
 </table>
@@ -42,7 +42,7 @@ O jogo é uma corrida baseada em turnos entre dois personagens ao longo de 5 rod
 
 Para uma análise detalhada das regras atuais e originais, por favor, consulte o [Documento de Regras de Negócio](./business_rules_reviewed.md).
 
-## 👥 Personagens / Characters
+<h2 id="characters">👥 Personagens / Characters</h2>
 
 <table style="border-collapse: collapse; width: 800px; margin: 0 auto;">
     <tr>
@@ -51,27 +51,27 @@ Para uma análise detalhada das regras atuais e originais, por favor, consulte o
             <img src="./docs/mario.gif" alt="Mario Kart" width="60" height="60">
         </td>
         <td style="border: 1px solid black; text-align: center;">
-            <p>Velocidade: 4</p>
-            <p>Manobrabilidade: 3</p>
-            <p>Poder: 3</p>
+            <p>Speed: 4</p>
+            <p>Handling: 3</p>
+            <p>Power: 3</p>
         </td>
          <td style="border: 1px solid black; text-align: center;">
             <p>Peach</p>
             <img src="./docs/peach.gif" alt="Mario Kart" width="60" height="60">
         </td>
         <td style="border: 1px solid black; text-align: center;">
-            <p>Velocidade: 3</p>
-            <p>Manobrabilidade: 4</p>
-            <p>Poder: 2</p>
+            <p>Speed: 3</p>
+            <p>Handling: 4</p>
+            <p>Power: 2</p>
         </td>
           <td style="border: 1px solid black; text-align: center;">
             <p>Yoshi</p>
             <img src="./docs/yoshi.gif" alt="Mario Kart" width="60" height="60">
         </td>
         <td style="border: 1px solid black; text-align: center;">
-            <p>Velocidade: 2</p>
-            <p>Manobrabilidade: 4</p>
-            <p>Poder: 3</p>
+            <p>Speed: 2</p>
+            <p>Handling: 4</p>
+            <p>Power: 3</p>
         </td>
     </tr>
     <tr>
@@ -80,27 +80,27 @@ Para uma análise detalhada das regras atuais e originais, por favor, consulte o
             <img src="./docs/bowser.gif" alt="Mario Kart" width="60" height="60">
         </td>
         <td style="border: 1px solid black; text-align: center;">
-            <p>Velocidade: 5</p>
-            <p>Manobrabilidade: 2</p>
-            <p>Poder: 5</p>
+            <p>Speed: 5</p>
+            <p>Handling: 2</p>
+            <p>Power: 5</p>
         </td>
         <td style="border: 1px solid black; text-align: center;">
             <p>Luigi</p>
             <img src="./docs/luigi.gif" alt="Mario Kart" width="60" height="60">
         </td>
         <td style="border: 1px solid black; text-align: center;">
-            <p>Velocidade: 3</p>
-            <p>Manobrabilidade: 4</p>
-            <p>Poder: 4</p>
+            <p>Speed: 3</p>
+            <p>Handling: 4</p>
+            <p>Power: 4</p>
         </td>
         <td style="border: 1px solid black; text-align: center;">
             <p>Donkey Kong</p>
             <img src="./docs/dk.gif" alt="Mario Kart" width="60" height="60">
         </td>
         <td style="border: 1px solid black; text-align: center;">
-            <p>Velocidade: 2</p>
-            <p>Manobrabilidade: 2</p>
-            <p>Poder: 5</p>
+            <p>Speed: 2</p>
+            <p>Handling: 2</p>
+            <p>Power: 5</p>
         </td>
     </tr>
 </table>
