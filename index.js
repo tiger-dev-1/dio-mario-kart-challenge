@@ -71,7 +71,7 @@ const rl = readline.createInterface({
 
 // Displays the character list cleanly, showing only ID and name.
 function displayCharacters(characterList) {
-  console.log("\nAvailable Characters:");
+  console.log("\nAvailable Characters:\n");
   characterList.forEach((char) => {
     console.log(`  [${char.id}] ${char.name}`);
   });
@@ -117,17 +117,19 @@ async function chooseCharacter(prompt, availableCharacters) {
 }
 
 async function playRaceEngine(player1, player2) {
-  console.log("\n🏁 Race starting! 🏁\n");
+  console.log("\n                 🏁  Race starting! 🏁");
+  console.log("--------------------------------------------------------");
 
   let player1Score = 0;
   let player2Score = 0;
 
   for (let round = 1; round <= 5; round++) {
-    console.log(`\nዙ Round ${round} ዙ`);
+    console.log(`\n   ---🏁  Round #${round} 🏁---   `);
 
     // Draw a track block
     const trackBlock = await getRandomTrackBlock();
-    console.log(`Track type: ${trackBlock.name}`);
+    console.log(`   Track type: ${trackBlock.name}`);
+    console.log();
 
     // Roll the dice
     const diceResult1 = await rollDice();
@@ -159,32 +161,40 @@ async function playRaceEngine(player1, player2) {
     let totalTestSkill1 = player1Skill + diceResult1;
     let totalTestSkill2 = player2Skill + diceResult2;
 
-    console.log(`  🎲 ${player1.name} rolled a dice of ${diceResult1} + ${skillType} ${player1Skill} = ${totalTestSkill1}`);
-    console.log(`  🎲 ${player2.name} rolled a dice of ${diceResult2} + ${skillType} ${player2Skill} = ${totalTestSkill2}`);
+    console.log(`  🎲 ${player1.name} rolled a dice of ${diceResult1} + ${player1Skill} (${skillType}) = ${totalTestSkill1}`);
+    console.log(`  🎲 ${player2.name} rolled a dice of ${diceResult2} + ${player2Skill} (${skillType}) = ${totalTestSkill2}`);
+    console.log();
 
     if (totalTestSkill1 > totalTestSkill2) {
-      console.log(`  ${player1.name} won the round! 🎉`);
+      console.log(`  ${player1.name} won the round! 🍄`);
       if (trackBlock.name === "CLASH") {
         console.log(`  ${player2.name} lost a point! 🐢`);
         player2Score--;
       } else {
+        console.log(`  ${player1.name} gained a point! ⭐`);
         player1Score++;
       }
     } else if (totalTestSkill2 > totalTestSkill1) {
-      console.log(`  ${player2.name} won the round! 🎉`);
+      console.log(`  ${player2.name} won the round! 🍄`);
       if (trackBlock.name === "CLASH") {
         console.log(`  ${player1.name} lost a point! 🐢`);
         player1Score--;
       } else {
+        console.log(`  ${player2.name} gained a point! ⭐`);
         player2Score++;
       }
     } else {
       console.log("  It's a draw for this round!");
     }
-    console.log("---------------------------------");
+
+    console.log("\n   --- Current Score ---");
+    console.log(`   ${player1.name}: ${player1Score} point(s)`);
+    console.log(`   ${player2.name}: ${player2Score} point(s)`);
+
+    console.log("--------------------------------------------------------");
   }
 
-  console.log("\n🏆 Final Result 🏆");
+  console.log("\n---🏆 Final Score 🏆---\n");
   console.log(`${player1.name} (Player 1): ${player1Score} point(s)`);
   console.log(`${player2.name} (Player 2): ${player2Score} point(s)`);
 
@@ -198,7 +208,7 @@ async function playRaceEngine(player1, player2) {
 }
 
 (async function main() {
-  console.log("Welcome to Mario Kart JS!");
+  console.log("\n---🏁 🏎️   Welcome to Mario Kart JS! 🏎️  🏁---");
 
   displayCharacters(characters);
   const player1 = await chooseCharacter("\nPlayer 1, choose your character by their number: ", characters);
@@ -207,17 +217,17 @@ async function playRaceEngine(player1, player2) {
     rl.close();
     return;
   }
-  console.log(`Player 1 selected: ${player1.name}`);
+  console.log(`\nPlayer 1 selected: ${player1.name}`);
 
   const availableForP2 = characters.filter((char) => char.id !== player1.id);
   displayCharacters(availableForP2);
-  const player2 = await chooseCharacter("Player 2, choose your character by their number: ", availableForP2);
+  const player2 = await chooseCharacter("\nPlayer 2, choose your character by their number: ", availableForP2);
   if (!player2) {
     console.log("\nToo many invalid attempts for Player 2. \nEnding Game... \nRestart whenever you like It! =)");
     rl.close();
     return;
   }
-  console.log(`Player 2 selected: ${player2.name}`);
+  console.log(`\nPlayer 2 selected: ${player2.name}`);
 
   await playRaceEngine(player1, player2);
 
