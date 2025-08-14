@@ -83,19 +83,14 @@ function askWhichChar(query) {
   return new Promise((resolve) => rl.question(query, resolve));
 }
 
-// Temporary call to test the function. We will move this later.
-//displayCharacters();
-
-// The main game function will be called here in the future.
-
 // --- Game Logic Functions ---
-async function rollDice() {
-  // Returns a random integer from 1 to 6
+function rollDice() {
+  // Returns a random item from the dice array
   const randomIndex = Math.floor(Math.random() * dice.length);
   return dice[randomIndex];
 }
 
-async function getRandomTrackBlock() {
+function getRandomTrackBlock() {
   // Returns a random track block object
   const randomIndex = Math.floor(Math.random() * trackBlocks.length);
   return trackBlocks[randomIndex];
@@ -103,8 +98,15 @@ async function getRandomTrackBlock() {
 
 async function chooseCharacter(prompt, availableCharacters) {
   for (let i = 0; i < 3; i++) {
-    const id = await askWhichChar(prompt);
-    const selectedChar = availableCharacters.find((char) => char.id === parseInt(id));
+    const input = await askWhichChar(prompt);
+    const charId = parseInt(input);
+
+    if (isNaN(charId)) {
+      console.log("Invalid input. Please enter a number.");
+      continue;
+    }
+
+    const selectedChar = availableCharacters.find((char) => char.id === charId);
 
     if (!selectedChar) {
       console.log("Invalid Character Number! Please, try again.");
@@ -121,13 +123,13 @@ async function playRound(player1, player2) {
   let p2ScoreChange = 0;
 
   // Draw a track block
-  const trackBlock = await getRandomTrackBlock();
+  const trackBlock = getRandomTrackBlock();
   console.log(`   Track type: ${trackBlock.name}`);
   console.log();
 
   // Roll the dice
-  const diceResult1 = await rollDice();
-  const diceResult2 = await rollDice();
+  const diceResult1 = rollDice();
+  const diceResult2 = rollDice();
 
   // Check the total skill
   let player1Skill = 0;
@@ -208,7 +210,7 @@ async function playRaceEngine(player1, player2) {
   // --- Tie-Breaker Logic ---
   let roundCounter = 5;
   while (player1Score === player2Score) {
-    console.log("\n   The race is Tied! Starting SUDDEN DEATH!\n");
+    console.log("\n   The race is tied! Starting SUDDEN DEATH!");
     roundCounter++;
 
     console.log(`\n   ---🏁  Round #${roundCounter} 🏁---   `);
