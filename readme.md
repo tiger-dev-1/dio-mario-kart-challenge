@@ -32,7 +32,7 @@ For a detailed breakdown of the current and original rules, please see the [Busi
         <td>
             <b>Objetivo:</b>
             <p>Este projeto é uma releitura do "Desafio Mario Kart JS" originalmente proposto pela DIO. Embora o instrutor tenha sugerido fazer um fork do projeto original para implementar melhorias, esta versão foi construída do zero para explorar e redefinir completamente a lógica e a arquitetura do jogo. O objetivo é criar um simulador de jogo de corrida em Node.js com regras e mecânicas revisadas para uma experiência de jogo aprimorada.</p>
-            <p><i>Nota: O layout HTML deste README foi criado pelo autor do projeto original. Eu achei o design tão bonitinho rsrsrs que decidi usá-lo aqui. O conteúdo textual, no entanto, foi reescrito para descrever esta versão revisada do projeto.</i></p>
+            <p><i>Nota: O layout HTML deste README foi criado pelo autor do projeto original. Eu achei o design tão bonitinho rsrsrs que decidi usá-lo aqui. O texto, no entanto, foi reescrito para descrever esta versão revisada do projeto.</i></p>
         </td>
     </tr>
 </table>
